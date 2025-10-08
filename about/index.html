@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,8 +12,19 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../style.css" />
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme-preference");
+        if (saved) {
+          document.documentElement.className = saved;
+        } else {
+          document.documentElement.className = "light";
+        }
+      })();
+    </script>
   </head>
   <body>
+    <div class="loading-bar"></div>
     <div class="theme-switch-wrapper">
       <label class="theme-switch" for="theme-switch">
         <input
@@ -24,21 +35,37 @@
         <span class="slider" aria-hidden="true"></span>
       </label>
     </div>
-    <main class="portfolio-grid">
-      <section id="bio">
-        <h2>Bio</h2>
-        <p>About me section.</p>
-      </section>
-
-      <section id="skills">
-        <h2>Skills</h2>
-        <p>My skills.</p>
-      </section>
-
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Contact info.</p>
-      </section>
+    <a href="../" class="back-button">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M15 18L9 12L15 6"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </a>
+    <main class="about-main">
+      <div class="about-container">
+        <div class="text">
+          <h1>ABOUT</h1>
+          <p>
+            This is a medium sized paragraph about me. I am Robert Bacula, a
+            developer passionate about creating amazing web experiences. Here
+            you can find information about my background, skills, and interests.
+          </p>
+        </div>
+        <div class="profile-image">
+          <img src="../images/robertbacula.JPG" alt="Robert Bacula" />
+        </div>
+      </div>
     </main>
 
     <footer>

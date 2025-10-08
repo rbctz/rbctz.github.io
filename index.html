@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,8 +12,19 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme-preference");
+        if (saved) {
+          document.documentElement.className = saved;
+        } else {
+          document.documentElement.className = "light";
+        }
+      })();
+    </script>
   </head>
   <body>
+    <div class="loading-bar"></div>
     <div class="theme-switch-wrapper">
       <label class="theme-switch" for="theme-switch">
         <input
@@ -24,12 +35,11 @@
         <span class="slider" aria-hidden="true"></span>
       </label>
     </div>
+    <div class="name-header">Robert Bacula</div>
     <main class="hero">
       <div class="intro">
-        <h2>Welcome to My Portfolio</h2>
-        <p>
-          I'm a passionate developer and student creating innovative solutions.
-        </p>
+        <h2>Welcome! I’m Robert Bacula,</h2>
+        <p>creating software that combines logic, precision, and creativity.</p>
         <div class="buttons">
           <a href="/projects/" class="btn">View My Projects</a>
           <a href="/about/" class="btn">Learn More About Me</a>

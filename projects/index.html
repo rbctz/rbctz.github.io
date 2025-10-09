@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects - Robert Bacula Portfolio</title>
+    <title>Robert Bacula</title>
     <link rel="icon" type="image/png" href="/images/email-marketing.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,33 +29,12 @@
     <div class="loading-bar"></div>
     <div class="topbar">
       <div class="topbar-inner">
-        <div class="topbar-left">
-          <a href="../" class="back-button" aria-label="Back">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M15 18L9 12L15 6"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </a>
-        </div>
-
-        <nav class="topbar-nav" aria-label="Main navigation">
+        <nav class="topbar-nav-full">
+          <a class="site-logo" href="/" aria-label="Home">RB</a>
+          <a class="topbar-link" href="/">Home</a>
           <a class="topbar-link" href="/projects/">Projects</a>
           <a class="topbar-link" href="/about/">About</a>
           <a class="topbar-link" href="/contact/">Contact</a>
-        </nav>
-
-        <div class="topbar-right">
           <div class="theme-switch-wrapper">
             <label class="theme-switch" for="theme-switch">
               <input
@@ -64,9 +45,107 @@
               <span class="slider" aria-hidden="true"></span>
             </label>
           </div>
-        </div>
+        </nav>
       </div>
     </div>
+    <main class="projects-grid">
+      <!-- PIGS AND KINGS -->
+
+      <article class="project-card">
+        <div class="card-media">
+          <img
+            src="../images/pigsandkingscropped.gif"
+            alt="Project 1 Preview"
+          />
+        </div>
+        <div class="card-content">
+          <h3>Pigs and Kings</h3>
+          <p>
+            Platformer game in 2D in which you play as The King aiming to clear
+            the castle while avoiding obstacles and enemies.
+          </p>
+        </div>
+        <div class="card-tags">
+          <span>Java</span>
+          <span>Swing API</span>
+          <span>OOP</span>
+        </div>
+      </article>
+
+      <!-- MAPTIC -->
+
+      <article class="project-card">
+        <div class="card-media">
+          <img src="../images/project2.gif" alt="Project 2 Preview" />
+        </div>
+        <div class="card-content">
+          <h3>Maptic</h3>
+          <p>
+            Tool window plugin that generates an interactive, visual
+            representation of a codebase, allowing developers to navigate and
+            understand complex projects more easily.
+          </p>
+        </div>
+        <div class="card-tags">
+          <span>Kotlin</span>
+          <span>Gradle</span>
+        </div>
+      </article>
+
+      <!-- ASCII THINGS -->
+
+      <article class="project-card">
+        <div class="card-media">
+          <img src="../images/donut.gif" alt="Project 3 Preview" />
+        </div>
+        <div class="card-content">
+          <h3>ASCII Animations</h3>
+          <p>Spinning donut or cube rendered in the terminal</p>
+        </div>
+        <div class="card-tags">
+          <span>JavaScript</span>
+        </div>
+      </article>
+
+      <!-- ASCII THINGS -->
+
+      <article class="project-card">
+        <div class="card-media">
+          <img src="../images/project4.gif" alt="Project 4 Preview" />
+        </div>
+        <div class="card-content">
+          <h3>Project 4</h3>
+          <p>
+            Details about the fourth project, emphasizing its unique features.
+          </p>
+        </div>
+        <div class="card-tags">
+          <span>Svelte</span>
+          <span>Firebase</span>
+          <span>TypeScript</span>
+        </div>
+      </article>
+
+      <!-- ASCII THINGS -->
+
+      <article class="project-card">
+        <div class="card-media">
+          <img src="../images/project5.gif" alt="Project 5 Preview" />
+        </div>
+        <div class="card-content">
+          <h3>Project 5</h3>
+          <p>
+            Summary of project five, with a focus on its impact and tech stack.
+          </p>
+        </div>
+        <div class="card-tags">
+          <span>Next.js</span>
+          <span>GraphQL</span>
+          <span>AWS</span>
+        </div>
+      </article>
+    </main>
+
     <footer>
       <p>&copy; 2025 Robert Bacula</p>
     </footer>

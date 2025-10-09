@@ -104,8 +104,8 @@ section::after {
 
 .back-button {
   position: fixed;
-  top: 50px;
-  left: 50px;
+  top: 30px;
+  left: 20px;
   font-size: 10rem;
   color: var(--text);
   text-decoration: none;
@@ -128,24 +128,7 @@ section::after {
   transform: scale(1.1);
 }
 
-.name-header {
-  position: fixed;
-  top: 50px;
-  left: 50px;
-  font-family: "Inter", sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--text);
-  z-index: 1000;
-  background: var(--panel-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 10px 20px;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  animation: slideUp 0.8s ease 0s both;
-}
+/* .name-header removed - header shows name inside .floating-header now */
 
 header {
   text-align: center;
@@ -179,6 +162,107 @@ header p {
   align-items: center;
   justify-content: center;
   animation: fadeIn 1s ease;
+}
+
+/* Topbar only shown on homepage (simple thin bar) */
+.topbar {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 100px;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* inner elements handle pointer events */
+}
+
+.topbar-inner {
+  width: 110%;
+  max-width: 12000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--panel-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 40px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  pointer-events: auto;
+}
+
+/* Topbar nav and logo */
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbar-nav {
+  display: flex;
+  gap: 160px;
+  align-items: center;
+}
+
+.topbar-link {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 12px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    border-color 0.18s ease;
+  font-size: 1.3rem;
+}
+.topbar-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  border-color: rgba(255, 255, 255, 0.03);
+}
+.topbar-link:active {
+  transform: translateY(-2px);
+}
+
+/* indicate current page */
+.topbar-link[aria-current="page"],
+.topbar-link.active {
+  background: linear-gradient(90deg, var(--accent), rgba(255, 255, 255, 0.03));
+  color: var(--bg);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+/* responsive adjustments */
+@media (max-width: 760px) {
+  .topbar-inner {
+    padding: 18px 12px;
+  }
+  .topbar-nav {
+    gap: 8px;
+  }
+  .topbar-link {
+    padding: 8px 12px;
+    font-size: 1rem;
+  }
+}
+
+.topbar .theme-switch-wrapper {
+  position: static;
+  right: 0;
+}
+
+/* push hero down so topbar doesn't overlap on small screens */
+.hero {
+  margin-top: 70px;
 }
 
 .hero .intro h2 {
@@ -288,10 +372,183 @@ section.visible {
   animation: fadeIn 1s ease;
 }
 
+.contact-main {
+  margin: 60px auto;
+  max-width: 800px;
+  padding: 0 20px;
+  animation: fadeIn 0.6s ease;
+}
+
+@media (min-height: 800px) {
+  .contact-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(
+      100vh - 250px
+    ); /* full viewport height minus header/footer */
+  }
+}
+
+.contact-panel {
+  background: var(--panel-bg);
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  padding: 36px 36px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  max-width: 720px;
+  margin: 40px auto;
+  transform: translateY(-10px);
+}
+
+.contact-panel h1 {
+  margin-bottom: 12px;
+  font-size: 2.6rem;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 16px 0 8px 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.contact-list a {
+  color: var(
+    --text
+  ); /* use main text color so links appear black in light theme */
+  text-decoration: none;
+  font-size: 1.15rem;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+.contact-panel .note {
+  margin-top: 18px;
+  color: var(--muted);
+  font-family: "Roboto Mono", monospace;
+}
+
+/* enlarge general panel text for better presence */
+.contact-panel p,
+.contact-panel li,
+.contact-panel strong {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 520px) {
+  .contact-panel {
+    padding: 24px;
+  }
+  .contact-panel h1 {
+    font-size: 2rem;
+  }
+  .contact-list a {
+    font-size: 1rem;
+  }
+}
+
+/* Floating social bubbles */
+.social-bubbles {
+  position: relative; /* positioned relative to contact-main */
+}
+
+.bubble {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.bubble img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  filter: none;
+}
+
+.bubble:focus,
+.bubble:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* Positions (relative to contact-panel) */
+.bubble-linkedin {
+  top: -110px;
+  left: -100px;
+  animation: float1 8s ease-in-out infinite;
+}
+.bubble-github {
+  top: -110px;
+  left: -180px;
+  animation: float2 10s ease-in-out infinite;
+}
+
+@keyframes float1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(3px, -4px);
+  }
+  66% {
+    transform: translate(3px, -2px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes float2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(-4px, 3px);
+  }
+  66% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@media (max-width: 640px) {
+  .bubble {
+    width: 44px;
+    height: 44px;
+  }
+  .bubble-linkedin {
+    top: -22px;
+    left: -22px;
+  }
+  .bubble-github {
+    bottom: -22px;
+    right: -22px;
+  }
+}
+
 .about-container {
   display: flex;
   align-items: center;
   gap: 40px;
+  margin-top: 120px;
+  margin-left: -100px;
 }
 
 .text {
@@ -314,7 +571,7 @@ section.visible {
   animation: slideUp 0.8s ease 0.6s both;
   position: relative;
   flex-shrink: 0;
-  top: 50px;
+  top: 0px;
   left: 50px;
 }
 
@@ -337,7 +594,7 @@ section h2 {
 
 footer {
   text-align: center;
-  margin: 60px 0 30px;
+  margin: 30px 0 30px;
   color: var(--muted);
   font-family: "Roboto Mono", monospace;
   margin-top: auto;

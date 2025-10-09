@@ -25,17 +25,28 @@
   </head>
   <body>
     <div class="loading-bar"></div>
-    <div class="theme-switch-wrapper">
-      <label class="theme-switch" for="theme-switch">
-        <input
-          type="checkbox"
-          id="theme-switch"
-          aria-label="Toggle dark mode"
-        />
-        <span class="slider" aria-hidden="true"></span>
-      </label>
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="topbar-left"></div>
+        <nav class="topbar-nav" aria-label="Main navigation">
+          <a class="topbar-link" href="/projects/">Projects</a>
+          <a class="topbar-link" href="/about/">About</a>
+          <a class="topbar-link" href="/contact/">Contact</a>
+        </nav>
+        <div class="topbar-right">
+          <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="theme-switch">
+              <input
+                type="checkbox"
+                id="theme-switch"
+                aria-label="Toggle dark mode"
+              />
+              <span class="slider" aria-hidden="true"></span>
+            </label>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="name-header">Robert Bacula</div>
     <main class="hero">
       <div class="intro">
         <h2>Welcome! I'm Robert Bacula,</h2>
@@ -43,6 +54,7 @@
         <div class="buttons">
           <a href="/projects/" class="btn">View My Projects</a>
           <a href="/about/" class="btn">Learn More About Me</a>
+          <a href="/contact/" class="btn">Contact</a>
         </div>
       </div>
     </main>

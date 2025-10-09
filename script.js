@@ -1,43 +1,5 @@
 // Theme (dark mode) toggle
-(() => {
-  const storageKey = "theme-preference";
-  const toggleCheckbox = document.getElementById("theme-switch");
-
-  if (!toggleCheckbox) return; // no switch in DOM
-
-  function applyTheme(theme) {
-    console.log(`Applying theme: ${theme}`);
-    document.documentElement.className = theme;
-    toggleCheckbox.checked = theme === "dark";
-    toggleCheckbox.setAttribute("aria-checked", String(theme === "dark"));
-  }
-
-  // Initialize: default to light unless user saved a preference
-  try {
-    const saved = localStorage.getItem(storageKey);
-    if (saved) {
-      applyTheme(saved);
-    } else {
-      applyTheme("light");
-    }
-  } catch (e) {
-    // If localStorage isn't available, default to light
-    applyTheme("light");
-  }
-
-  // Use the checkbox change event for toggling
-  toggleCheckbox.addEventListener("change", () => {
-    const newTheme = toggleCheckbox.checked ? "dark" : "light";
-    try {
-      localStorage.setItem(storageKey, newTheme);
-    } catch (e) {
-      // ignore storage errors
-    }
-    applyTheme(newTheme);
-  });
-
-  // Removed OS preference syncing — site will always default to light on first load
-})();
+// (theme toggle initialized earlier)
 
 // Loading bar progress
 (() => {

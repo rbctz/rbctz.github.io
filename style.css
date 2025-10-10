@@ -473,7 +473,7 @@ section.visible {
 }
 
 .about-main {
-  margin: 60px auto;
+  margin: 30px auto;
   max-width: 1200px;
   padding: 0 20px;
   animation: fadeIn 1s ease;
@@ -484,6 +484,7 @@ section.visible {
   max-width: 800px;
   padding: 0 20px;
   animation: fadeIn 0.6s ease;
+  margin-top: 150px;
 }
 
 .contact-panel {
@@ -496,6 +497,7 @@ section.visible {
   max-width: 720px;
   margin: 40px auto;
   transform: translateY(-10px);
+  position: relative;
 }
 
 .contact-panel h1 {
@@ -539,11 +541,14 @@ section.visible {
 
 /* Floating social bubbles */
 .social-bubbles {
-  position: relative; /* positioned relative to contact-main */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
 }
 
 .bubble {
-  position: absolute;
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -572,14 +577,15 @@ section.visible {
 
 /* Positions (relative to contact-panel) */
 .bubble-linkedin {
-  top: -110px;
-  left: -100px;
-  animation: float1 8s ease-in-out infinite;
+  animation: float1 10s ease-in-out infinite;
 }
+
 .bubble-github {
-  top: -110px;
-  left: -180px;
-  animation: float2 10s ease-in-out infinite;
+  animation: float2 12s ease-in-out infinite;
+}
+
+.bubble-instagram {
+  animation: float1 8s ease-in-out infinite;
 }
 
 @keyframes float1 {
@@ -806,14 +812,6 @@ html.dark {
     width: 44px;
     height: 44px;
   }
-  .bubble-linkedin {
-    top: -22px;
-    left: -22px;
-  }
-  .bubble-github {
-    bottom: -22px;
-    right: -22px;
-  }
   .topbar-inner {
     padding: 12px 8px;
     gap: 8px;
@@ -895,6 +893,9 @@ html.dark {
   section {
     padding: 25px;
   }
+  .contact-main {
+    margin-top: 40px;
+  }
 }
 
 @media (max-width: 380px) {
@@ -920,13 +921,9 @@ html.dark {
     width: 36px;
     height: 36px;
   }
-  .bubble-linkedin {
-    top: -15px;
-    left: -15px;
-  }
-  .bubble-github {
-    bottom: -15px;
-    right: -15px;
+  .social-bubbles {
+    grid-template-columns: 1fr;
+    margin-left: 20px;
   }
   .theme-switch-wrapper {
     right: 15px;
@@ -950,5 +947,8 @@ html.dark {
   .profile-image img {
     width: 200px;
     height: 300px;
+  }
+  .contact-main {
+    margin-top: 40px
   }
 }

@@ -114,3 +114,34 @@ window.addEventListener("load", () => {
     section.classList.add("visible");
   });
 });
+
+// Smooth scrolling with Lenis
+const lenis = new Lenis();
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
+// Back to top button
+const backToTopButton = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTopButton.classList.add("show");
+  } else {
+    backToTopButton.classList.remove("show");
+  }
+});
+
+backToTopButton.addEventListener("click", () => {
+  lenis.scrollTo(0, { duration: 1.5 });
+});
+
+// Scroll to tech section on arrow click
+const arrow = document.querySelector(".arrow");
+arrow.addEventListener("click", () => {
+  lenis.scrollTo(".tech-showcase", { duration: 1.5 });
+});

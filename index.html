@@ -48,11 +48,43 @@
         </nav>
       </div>
     </div>
+
+    <!-- Floating background blobs -->
+    <div class="floating-blob blob1"></div>
+    <div class="floating-blob blob2"></div>
+    <div class="floating-blob blob3"></div>
+    <div class="floating-blob blob4"></div>
+    <div class="floating-blob blob5"></div>
+    <div class="floating-blob blob6"></div>
+    <div class="floating-blob blob7"></div>
+
     <main class="hero">
-      <div class="intro">
-        <h2>Welcome! I'm Robert Bacula,</h2>
-        <p>creating software that combines logic, precision, and creativity.</p>
-        <div class="buttons">
+      <div class="hero-content">
+        <div class="status-indicator">
+          <span class="ping"></span>
+          <span class="status-text">Available for work</span>
+        </div>
+        <div class="location-indicator">
+          <span class="location-text">Bucharest, Romania</span>
+          <img
+            src="https://img.icons8.com/color/96/place-marker.png"
+            alt="Location"
+            class="location-icon"
+          />
+        </div>
+        <span class="hero-badge">
+          <span class="hero-emoji" role="img" aria-label="Waving hand">👋</span>
+          Hi, I'm
+        </span>
+        <h1 class="hero-title">Robert Bacula</h1>
+        <h2 class="hero-subtitle">
+          Software Developer &amp; Computer Engineer
+        </h2>
+        <p class="hero-description">
+          Exploring new technologies and building innovative software that makes
+          an impact.
+        </p>
+        <div class="buttons hero-actions">
           <a href="/projects/" class="btn">View My Projects</a>
           <a href="/about/" class="btn">Learn More About Me</a>
           <a href="/contact/" class="btn">Contact</a>
@@ -60,10 +92,67 @@
       </div>
     </main>
 
+    <div class="scroll-indicator">
+      <span class="arrow">↓</span>
+    </div>
+
+    <section class="tech-showcase">
+      <h2>Technologies I Like</h2>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <img
+            src="https://img.icons8.com/color/96/java-coffee-cup-logo.png"
+            alt="Java"
+          />
+          <p>Java</p>
+        </div>
+        <div class="tech-card">
+          <img
+            src="https://img.icons8.com/color/96/c-programming.png"
+            alt="C"
+          />
+          <p>C</p>
+        </div>
+        <div class="tech-card">
+          <img
+            src="https://img.icons8.com/color/96/javascript.png"
+            alt="JavaScript"
+          />
+          <p>JavaScript</p>
+        </div>
+        <div class="tech-card">
+          <img src="https://img.icons8.com/color/96/python.png" alt="Python" />
+          <p>Python</p>
+        </div>
+        <div class="tech-card">
+          <img
+            src="https://img.icons8.com/color/96/c-plus-plus-logo.png"
+            alt="C++"
+          />
+          <p>C++</p>
+        </div>
+        <div class="tech-card">
+          <img src="https://img.icons8.com/color/96/html-5.png" alt="HTML" />
+          <p>HTML</p>
+        </div>
+        <div class="tech-card">
+          <img src="https://img.icons8.com/color/96/css3.png" alt="CSS" />
+          <p>CSS</p>
+        </div>
+        <div class="tech-card">
+          <img src="https://img.icons8.com/color/96/git.png" alt="Git" />
+          <p>Git</p>
+        </div>
+      </div>
+    </section>
+
     <footer>
       <p>&copy; 2025 Robert Bacula</p>
     </footer>
 
+    <div class="back-to-top" id="backToTop">↑</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

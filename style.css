@@ -910,14 +910,14 @@ project cards
   pointer-events: none;
 }
 
-.card-media img {
+.card-media video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.project-card:hover .card-media img {
+.project-card:hover .card-media video {
   transform: scale(1.05);
 }
 
@@ -1216,6 +1216,13 @@ html.dark {
   --border: rgba(255, 255, 255, 0.3);
   --muted: #adb5bd;
   --accent: #80bfff;
+}
+
+/* Limit to max 4 cards per row on large screens */
+@media (min-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 /* Consolidated responsive styles */

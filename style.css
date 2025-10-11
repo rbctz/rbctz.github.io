@@ -227,7 +227,7 @@ Includes logo, links, and theme switcher
   left: 4px;
   bottom: 4px;
   background: transparent;
-  background-image: url("images/sun-light.svg");
+  background-image: url("images/icons/sun-light.svg");
   background-size: 18px 18px;
   background-repeat: no-repeat;
   background-position: center;
@@ -244,7 +244,7 @@ Includes logo, links, and theme switcher
 
 .theme-switch input:checked + .slider:before {
   transform: translateX(36px);
-  background-image: url("images/half-moon.svg");
+  background-image: url("images/icons/half-moon.svg");
 }
 
 /*

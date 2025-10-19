@@ -145,3 +145,31 @@ const arrow = document.querySelector(".arrow");
 arrow.addEventListener("click", () => {
   lenis.scrollTo(".tech-showcase", { duration: 1.5 });
 });
+
+// Sequential video loading after page load
+window.addEventListener("load", () => {
+  const videos = document.querySelectorAll("video");
+  let i = 0;
+  function loadNext() {
+    if (i >= videos.length) return;
+    const v = videos[i];
+    v.load();
+    v.play().catch(() => {}); // Attempt to play; catch errors if autoplay fails
+    i++;
+    setTimeout(loadNext, 500); // Space out loading by 0.5s
+  }
+  loadNext();
+});
+
+// Staggered video loading after page load
+window.addEventListener("load", () => {
+  const videos = document.querySelectorAll("video");
+  let delay = 0;
+  videos.forEach((v) => {
+    setTimeout(() => {
+      v.load();
+      v.play().catch(() => {}); // Attempt to play; catch errors if autoplay fails
+    }, delay);
+    delay += 400; // Load each video 0.4s apart
+  });
+});
